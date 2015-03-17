@@ -5,6 +5,10 @@ body {
     font-family: arial, sans-serif;
 }
 
+select {
+    width: 100px;
+}
+
 #main {
     width: 500px;
     margin: auto;
@@ -46,15 +50,15 @@ body {
     line-height: 13px;
 }
 
-form {
+.options {
     padding: 20px;
     padding-left: 0;
     margin-bottom: 20px;
 }
 
-form input[type=text] {
+.options input[type=text] {
     margin-right: 10px;
-    width: 70%;
+    width: 50%;
     font-size: 12px;
     padding: 5px;
 }
@@ -78,6 +82,14 @@ form input[type=text] {
 
 .chat .username {
     font-weight: 800;
+}
+
+.chat .friend {
+    color: #009933;
+}
+
+.chat .timestamp {
+    font-size: 8px;
 }
 
 .chat:hover {
