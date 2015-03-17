@@ -59,6 +59,17 @@ form input[type=text] {
     padding: 5px;
 }
 
+#refresh {
+    width: 50%;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.btn {
+    text-align: center;
+}
+
 .chat {
     padding: 5px;
     margin-bottom: 5px;
