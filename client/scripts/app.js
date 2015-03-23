@@ -47,7 +47,7 @@ App.prototype.fetch = function (roomname) {
   $.ajax({
 	  url: this.server,
 	  type: 'GET',
-	  data: dataObj, 
+	  data: dataObj,
 	  contentType: 'application/json',
 	  success: function (data) {
 	    this.displayMessages(data.results);
@@ -63,11 +63,17 @@ App.prototype.parseMessage = function (message) {
 	var username = _.escape(message.username);
 	var messageText = _.escape(message.text);
 	var timestamp = new Date(Date.parse(message.createdAt));
-	timestamp = timestamp.getHours() + ':' + timestamp.getMinutes() + ' ' + timestamp.toDateString();
+	var addZero = function(i) {
+    if (i < 10) {
+        i = "0" + i;
+    }
+    return i;
+}
+	timestamp = addZero(timestamp.getHours()) + ':' + addZero(timestamp.getMinutes()) + ' ' + timestamp.toDateString();
 	if( this.friendList.indexOf(username) > -1 ) {
 		return '<div class="chat"><span class="username friend" data-username="' + username + '">@'+ username +': </span>'+ messageText +' <span class="timestamp">' + timestamp + '</span></div>';
 	} else {
-	  return '<div class="chat"><span class="username" data-username="' + username + '">@'+ username +': </span>'+ messageText +' <span class="timestamp">' + timestamp + '</span></div>';			
+	  return '<div class="chat"><span class="username" data-username="' + username + '">@'+ username +': </span>'+ messageText +' <span class="timestamp">' + timestamp + '</span></div>';
 	}
 };
 
