@@ -19,6 +19,7 @@
       <div class="options">
         <span>Room: </span>
         <select name="roomname" id="roomname">
+          <option value="lobby">lobby</option>
         </select>
         <!-- <button id="roombutton">Enter</button> -->
         <br><br>
@@ -26,9 +27,11 @@
         <input type="text" id="newroom">
         <button id="createroombutton">Enter</button>
         <br><br>
-        <span>Message: </span>
+        <form id="form" action="javascript:app.submit()">
+        <span>Message: </span>  <input class="postfield" type="text"><input type="submit" value="Send">
+        </form><!-- 
         <input type="text" name="text" id="messagetext">
-        <button id="submitbutton">Submit</button>  
+        <button id="submitbutton">Submit</button>   -->
       </div>
       <div id="chats">
       </div>
